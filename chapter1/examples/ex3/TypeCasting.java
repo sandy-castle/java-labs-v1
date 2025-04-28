@@ -82,7 +82,7 @@ public class TypeCasting {
         int i5 = Integer.parseInt("123");
         double d5 = Double.parseDouble("3.14");
         boolean b5 = Boolean.parseBoolean("true");
-        
+        //대문자로 시작하는 것 : 클래스 메서드를 사용해서 메서드 변환
         System.out.println("Integer.parseInt(\"123\") = " + i5);
         System.out.println("Double.parseDouble(\"3.14\") = " + d5);
         System.out.println("Boolean.parseBoolean(\"true\") = " + b5);
