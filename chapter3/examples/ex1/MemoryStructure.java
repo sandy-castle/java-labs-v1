@@ -30,9 +30,10 @@ public class MemoryStructure {
         System.out.println("primitiveA: " + primitiveA); // 10 출력
         System.out.println("primitiveB: " + primitiveB); // 20 출력
         
-        Person personA = new Person("John");
+        Person personA = new Person("John"); //객체 생성
         Person personB = personA; // 참조 복사 (같은 객체를 가리킴)
         personB.setName("Elon"); // personA에도 영향
+        //여기서 둘째줄을 통해 주소를 연결 받았기 때문에 a가 일론이 출력됨
         
         System.out.println("personA의 이름: " + personA.getName()); // Elon 출력
         System.out.println("personB의 이름: " + personB.getName()); // Elon 출력

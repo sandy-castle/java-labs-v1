@@ -11,12 +11,11 @@ public class WhileLoopLab {
         
         // 1. 사용자로부터 숫자를 입력받아 0이 입력될 때까지 합을 계산하여 출력하는 프로그램
 
-        
         // TODO: 사용자로부터 숫자를 입력받고, 0이 입력될 때까지의 합계를 계산하여 출력하세요.
-        // 1. 합계를 저장할 변수를 선언하세요.
-        // 2. while 반복문을 사용하여 사용자로부터 숫자를 입력받으세요.
-        // 3. 입력받은 숫자가 0이 아니면 합계에 더하고, 0이면 반복문을 종료하세요.
-        // 4. 최종 합계를 출력하세요.
+        // 1) 합계를 저장할 변수를 선언하세요.
+        // 2) while 반복문을 사용하여 사용자로부터 숫자를 입력받으세요.
+        // 3) 입력받은 숫자가 0이 아니면 합계에 더하고, 0이면 반복문을 종료하세요.
+        // 4) 최종 합계를 출력하세요.
         int sum = 0;
         System.out.println("숫자를 입력하세요 (0을 입력하면 종료):");
         int num = scanner.nextInt();
@@ -36,6 +35,7 @@ public class WhileLoopLab {
         // 3. 변수가 짝수인 경우에만 출력하세요.
         // 4. 변수를 1씩 증가시키세요.
         int num3 = 1;
+        System.out.print("짝 수 :");
         while (num3 <= 100)
         {
             num3++;
@@ -43,9 +43,10 @@ public class WhileLoopLab {
             {
                 continue;
             }
-            System.out.println("짝수 : " +num3);
+          System.out.print(num3 + " ");
         }
-        
+
+
         // 3. 구구단 출력 (do-while 사용)
         System.out.println("\n출력할 구구단의 단을 입력하세요 (2-9): ");
         

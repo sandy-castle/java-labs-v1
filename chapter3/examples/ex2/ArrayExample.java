@@ -11,7 +11,7 @@ public class ArrayExample {
         System.out.println("===== 배열 선언과 초기화 =====");
         
         // 방법 1: 선언과 동시에 초기화
-        int[] numbers1 = {10, 20, 30, 40, 50};
+        int[] numbers1 = {10, 20, 30, 40, 50}; //대괄호로 배열 선언
         
         // 방법 2: 배열 선언 후 초기화
         int[] numbers2 = new int[5];
@@ -28,7 +28,8 @@ public class ArrayExample {
         System.out.println("numbers1: " + Arrays.toString(numbers1));
         System.out.println("numbers2: " + Arrays.toString(numbers2));
         System.out.println("numbers3: " + Arrays.toString(numbers3));
-        
+        //Arrays라는 클래스로 호출
+
         // 배열 요소 접근
         System.out.println("\n===== 배열 요소 접근 =====");
         System.out.println("numbers1의 첫 번째 요소: " + numbers1[0]);
@@ -72,7 +73,7 @@ public class ArrayExample {
         // 1. Arrays.copyOf 사용
         int[] copied1 = Arrays.copyOf(numbers1, numbers1.length);
         System.out.println("Arrays.copyOf: " + Arrays.toString(copied1));
-        
+        //Arrays안에 있는 메서드 copyOf
         // 2. System.arraycopy 사용
         int[] copied2 = new int[numbers1.length];
         System.arraycopy(numbers1, 0, copied2, 0, numbers1.length);
