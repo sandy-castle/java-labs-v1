@@ -55,7 +55,7 @@ public class WhileLoop {
         
         // do-while로 메뉴 구현 예제
         System.out.println("\n메뉴 예제 (do-while):");
-        int choice = 3; // 사용자의 선택 (예시 값)
+        int choice = 1; // 사용자의 선택 (예시 값)
         do {
             System.out.println("메뉴:");
             System.out.println("1. 새 게임");

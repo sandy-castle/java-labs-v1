@@ -12,7 +12,30 @@ public class SwitchStatementLab {
         // 1. 사용자로부터 요일을 입력받아 해당 요일의 활동을 출력하는 프로그램
         System.out.println("요일을 입력하세요 (예: 월요일): ");
         String day = scanner.nextLine();
-        
+        switch (day)
+        {
+            case "월요일":
+                System.out.println("회의가 있습니다.");
+                break;
+            case "화요일":
+                System.out.println("보고서를 작성하세요.");
+                break;
+            case "수요일":
+                System.out.println("팀 미팅이 있습니다.");
+                break;
+            case "목요일":
+                System.out.println("외근이 있습니다.");
+                break;
+            case "금요일":
+                System.out.println("주간업무를 정리합시다.");
+                break;
+            case "토요일" : case "일요일" :
+                System.out.println("휴일입니다.");
+                break;
+            default :
+                System.out.println("잘못된 요일입니다.");
+                break;
+        }
         // TODO: 입력받은 요일에 따라 다음과 같이 출력하세요.
         // "월요일" - "회의가 있습니다."
         // "화요일" - "보고서를 작성합니다."
@@ -31,7 +54,23 @@ public class SwitchStatementLab {
         scanner.nextLine(); // 버퍼 비우기
         System.out.println("연산자를 입력하세요 (+, -, *, /): ");
         String operator = scanner.nextLine();
-        
+        switch (operator)
+        {
+            case "+":
+                System.out.println("결과값 : " + (num1 + num2));
+                break;
+            case "-" :
+                System.out.println("결과값 : " + (num1 - num2));
+                break;
+            case "*" :
+                System.out.println("결과값 : " + (num1 * num2));
+                break;
+            case "/"  :
+                System.out.println("결과값 : " + (num1 / num2));
+                break;
+            default :
+                    System.out.println("잘못된 연산자.");
+        }
         // TODO: 입력받은 두 숫자와 연산자를 이용하여 계산 결과를 출력하세요.
         // "+" - 두 수의 합
         // "-" - 첫 번째 수에서 두 번째 수를 뺀 값
@@ -43,7 +82,23 @@ public class SwitchStatementLab {
         // 3. 월 입력받아 계절 출력하기
         System.out.println("\n월을 입력하세요 (1-12): ");
         int month = scanner.nextInt();
-        
+
+        switch (month)
+        {
+            case 12: case 1: case 2 :
+                System.out.println("Winter.");
+                break;
+            case 3: case 4: case 5 :
+                System.out.println("Spring");
+                break;
+            case 6: case 7 : case 8 :
+                System.out.println("Summer");
+                break;
+            case 9: case 10 : case 11 :
+                System.out.println("autumn");
+                break;
+            default : System.out.println("It's not a valid month.");
+        }
         // TODO: 입력받은 월에 따라 계절을 출력하세요.
         // 12, 1, 2월 - "겨울"
         // 3, 4, 5월 - "봄"
