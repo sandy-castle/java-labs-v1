@@ -114,6 +114,9 @@ public class StarPatternLab {
             }
             System.out.println();
         }
+
+        //짝수별
+
         for (int i = he; i >= 1; i--) {
             // 왼쪽 공백: he - i 개
             for (int j = 1; j <= he - i; j++)

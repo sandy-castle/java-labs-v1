@@ -70,7 +70,7 @@ public class StringExample {
         
         String csvData = "사과,바나나,포도,딸기,오렌지";
         String[] fruits = csvData.split(",");
-        
+        //regex 문자열의 기준이 컴마라는 뜻
         System.out.println("split() 결과:");
         for (String fruit : fruits) {
             System.out.println(fruit);
