@@ -157,7 +157,7 @@ public class ArrayLab {
             for (int j = 0; j < 3; j++) {
                 System.out.print(result[i][j] + " ");
             }
-            System.out.println(); // 줄바꿈
+            System.out.println();
         }
         
         // 5. 배열을 이용한 간단한 데이터 분석

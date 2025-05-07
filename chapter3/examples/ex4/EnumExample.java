@@ -23,7 +23,8 @@ public class EnumExample {
                 break;
             case SATURDAY:
             case SUNDAY:
-                System.out.println("주말 - 휴식 시간입니다.");
+                System.out.println("주말 - 휴식 시간입니다." +
+                        "");
                 break;
             default:
                 System.out.println("평일 - 열심히 일하세요.");
@@ -162,6 +163,12 @@ enum Operation {
 
 // 상태 전이를 구현한 Enum 정의
 enum TaskStatus {
+    READY {
+        @Override
+        public TaskStatus nextStatus() {
+            return PENDING;
+        }
+    },
     PENDING {
         @Override
         public TaskStatus nextStatus() {
