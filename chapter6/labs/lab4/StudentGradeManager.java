@@ -10,7 +10,8 @@ import java.util.List;
  * 이 프로그램에는 논리적 오류와 버그가 포함되어 있습니다.
  * 디버깅 기법을 활용하여 오류를 찾고 수정하세요.
  */
-public class StudentGradeManager {
+public class StudentGradeManager
+{
     
     // 학생 목록
     private List<Student> students;
@@ -36,7 +37,6 @@ public class StudentGradeManager {
         students.add(student);
         System.out.println("학생을 추가했습니다: " + student);
     }
-    
     /**
      * 학생 성적 업데이트 메소드
      * @param id 학생 ID
@@ -54,33 +54,32 @@ public class StudentGradeManager {
                 return true;
             }
         }
-        
         return false;
     }
-    
     /**
      * 평균 성적 계산 메소드
      * @param id 학생 ID
      * @return 평균 성적 또는 학생을 찾지 못한 경우 -1
      */
-    public double calculateAverageScore(int id) {
+    public double calculateAverageScore(int id)
+    {
         // TODO: 디버깅 - 다음 코드에 버그가 있습니다.
         // 평균 계산 로직에 문제가 있습니다(정수 나눗셈 문제).
-        
-        for (Student student : students) {
-            if (student.getId() == id) {
+        for (Student student : students)
+        {
+            if (student.getId() == id)
+            {
                 int[] scores = student.getScores();
                 int sum = 0;
                 
-                for (int score : scores) {
+                for (int score : scores)
+                {
                     sum += score;
                 }
-                
                 // 평균 계산
                 return sum / scores.length;
             }
         }
-        
         return -1;  // 학생을 찾지 못함
     }
     
@@ -89,16 +88,19 @@ public class StudentGradeManager {
      * @param threshold 기준 점수
      * @return 기준 점수 이상의 평균을 가진 학생 목록
      */
-    public List<Student> findTopStudents(double threshold) {
+    public List<Student> findTopStudents(double threshold)
+    {
         // TODO: 디버깅 - 다음 코드에 버그가 있습니다.
         // 1. 리스트 수정 방법에 문제가 있습니다.
         // 2. 비교 로직에 문제가 있습니다.
         
         List<Student> result = new ArrayList<>(students);  // 원본 리스트를 복사
         
-        for (Student student : result) {
+        for (Student student : result)
+        {
             double average = calculateAverageScore(student.getId());
-            if (average <= threshold) {  // 의도와 다른 비교 연산자
+            if (average <= threshold)
+            {  // 의도와 다른 비교 연산자
                 result.remove(student);  // ConcurrentModificationException 발생 가능
             }
         }
@@ -177,7 +179,8 @@ public class StudentGradeManager {
          * @param name 학생 이름
          * @param scores 성적 배열
          */
-        public Student(int id, String name, int[] scores) {
+        public Student(int id, String name, int[] scores)
+        {
             this.id = id;
             this.name = name;
             this.scores = scores;
@@ -219,15 +222,19 @@ public class StudentGradeManager {
          * 학생 정보 문자열 반환
          */
         @Override
-        public String toString() {
+        public String toString()
+        {
             StringBuilder sb = new StringBuilder();
             sb.append("ID=").append(id)
               .append(", 이름='").append(name).append("'")
               .append(", 성적=[");
             
-            if (scores != null) {
-                for (int i = 0; i < scores.length; i++) {
-                    if (i > 0) {
+            if (scores != null)
+            {
+                for (int i = 0; i < scores.length; i++)
+                {
+                    if (i > 0)
+                    {
                         sb.append(", ");
                     }
                     sb.append(scores[i]);

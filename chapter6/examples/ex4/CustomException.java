@@ -6,14 +6,16 @@ package chapter6.examples.ex4;
  * 이 클래스는 사용자 정의 예외를 만드는 방법을 보여줍니다.
  * Exception 클래스를 상속받아 커스텀 예외를 정의합니다.
  */
-public class CustomException extends Exception {
+public class CustomException extends Exception
+{
     // 사용자 정의 상태 코드
     private int errorCode;
     
     /**
      * 기본 생성자
      */
-    public CustomException() {
+    public CustomException()
+    {
         super("사용자 정의 예외가 발생했습니다.");
         this.errorCode = 0;
     }

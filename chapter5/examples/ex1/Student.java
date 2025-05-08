@@ -21,6 +21,7 @@ public class Student extends Person {
     public Student(String name, int age, String studentId, String major) {
         // 부모 클래스의 매개변수 생성자 호출
         super(name, age);
+
         this.studentId = studentId;
         this.major = major;
         System.out.println("Student 매개변수 생성자 호출");

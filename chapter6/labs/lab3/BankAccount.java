@@ -2,10 +2,10 @@ package chapter6.labs.lab3;
 
 /**
  * 은행 계좌 클래스
- * 
  * 계좌 정보와 잔액을 관리하는 클래스입니다.
  */
-public class BankAccount {
+public class BankAccount
+{
     private String accountNumber;
     private String ownerName;
     private double balance;
@@ -16,7 +16,8 @@ public class BankAccount {
      * @param ownerName 예금주 이름
      * @param initialBalance 초기 잔액
      */
-    public BankAccount(String accountNumber, String ownerName, double initialBalance) {
+    public BankAccount(String accountNumber, String ownerName, double initialBalance)
+    {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = initialBalance;
@@ -29,7 +30,6 @@ public class BankAccount {
     public String getAccountNumber() {
         return accountNumber;
     }
-    
     /**
      * 예금주 이름 반환
      * @return 예금주 이름
@@ -53,8 +53,11 @@ public class BankAccount {
      */
     public void deposit(double amount) throws IllegalArgumentException {
         // TODO: 입금액이 0 이하인 경우 IllegalArgumentException을 발생시키세요.
+        // IllegalArgumentException 자바 표준 예외
         // TODO: 유효한 입금액인 경우 잔액을 증가시키세요.
-        
+        if (amount <= 0) // throw 떠넘기는 중
+        {throw new IllegalArgumentException("입금액은 0보다 커야 합니다.");}
+        balance += amount;
     }
     
     /**
@@ -67,14 +70,19 @@ public class BankAccount {
         // TODO: 출금액이 0 이하인 경우 IllegalArgumentException을 발생시키세요.
         // TODO: 출금액이 잔액보다 큰 경우 InsufficientBalanceException을 발생시키세요.
         // TODO: 유효한 출금액인 경우 잔액을 감소시키세요.
+        if (amount <= 0)
+        {throw new IllegalArgumentException("출금액은 0보다 커야 합니다.");}
+        if (amount > balance)
+        {throw new InsufficientBalanceException("잔액이 부족합니다.");}
+        balance -= amount;
         
     }
-    
     /**
      * 계좌 정보 문자열 반환
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "계좌번호: " + accountNumber + ", 예금주: " + ownerName + ", 잔액: " + balance + "원";
     }
 } 
