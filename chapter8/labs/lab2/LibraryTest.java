@@ -1,6 +1,7 @@
 package chapter8.labs.lab2;
 
 import java.util.List;
+import java.util.*;
 
 /**
  * Lab 2: 컬렉션 프레임워크 활용하기
@@ -8,28 +9,61 @@ import java.util.List;
  * 도서 관리 시스템의 기능을 테스트하는 클래스입니다.
  */
 public class LibraryTest {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        LibraryManager selfmanager = new LibraryManager();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("도서를 수동으로 추가하시겠습니까? (y/n): ");
+        String answer = scanner.nextLine();
+        if (answer.equalsIgnoreCase("y")) {
+            System.out.print("추가할 도서 수: ");
+            int count = scanner.nextInt();
+            scanner.nextLine(); // 개행 제거
+
+            for (int i = 0; i < count; i++) {
+                System.out.println((i + 1) + "번째 도서 정보 입력:");
+
+                System.out.print("ISBN: ");
+                String isbn = scanner.nextLine();
+
+                System.out.print("제목: ");
+                String title = scanner.nextLine();
+
+                System.out.print("저자: ");
+                String author = scanner.nextLine();
+
+                System.out.print("카테고리: ");
+                String category = scanner.nextLine();
+
+                System.out.print("출판년도: ");
+                int year = scanner.nextInt();
+
+                System.out.print("가격: ");
+                int price = scanner.nextInt();
+                scanner.nextLine(); // 다음 입력을 위해 개행 제거
+
+                Book book = new Book(isbn, title, author, category, year, price);
+                selfmanager.addBook(book);
+            }
+        }
+        addTestBooks(selfmanager); // 기본 테스트 도서 추가
+
         // LibraryManager 객체 생성
         LibraryManager manager = new LibraryManager();
-        
         // 테스트용 도서 데이터 추가
         addTestBooks(manager);
-        
         // 전체 도서 목록 출력
         System.out.println("=== 전체 도서 목록 ===");
         printBookList(manager.getAllBooks());
-        
         // 도서 검색 테스트
         System.out.println("\n=== '자바'가 제목에 포함된 도서 ===");
         printBookList(manager.searchBooksByTitle("자바"));
-        
         System.out.println("\n=== '김'으로 시작하는 저자의 도서 ===");
         printBookList(manager.searchBooksByAuthor("김"));
-        
         // 도서 정렬 테스트
         System.out.println("\n=== 제목 기준 정렬 ===");
         printBookList(manager.getSortedBooksByTitle());
-        
         System.out.println("\n=== 출판년도 기준 정렬 ===");
         printBookList(manager.getSortedBooksByYear());
         
@@ -65,7 +99,8 @@ public class LibraryTest {
     /**
      * 테스트용 도서 데이터 추가 메소드
      */
-    private static void addTestBooks(LibraryManager manager) {
+    private static void addTestBooks(LibraryManager manager)
+    {
         manager.addBook(new Book("9788960777330", "자바 프로그래밍", "홍작가", "프로그래밍", 2021, 30000));
         manager.addBook(new Book("9788960777347", "파이썬 기초", "김작가", "프로그래밍", 2020, 25000));
         manager.addBook(new Book("9788960777354", "알고리즘 개론", "이작가", "컴퓨터과학", 2019, 35000));
@@ -81,13 +116,16 @@ public class LibraryTest {
     /**
      * 도서 목록 출력 메소드
      */
-    private static void printBookList(List<Book> books) {
-        if (books == null || books.isEmpty()) {
+    private static void printBookList(List<Book> books)
+    {
+        if (books == null || books.isEmpty())
+        {
             System.out.println("도서가 없습니다.");
             return;
         }
         
-        for (Book book : books) {
+        for (Book book : books)
+        {
             System.out.println(book);
         }
     }

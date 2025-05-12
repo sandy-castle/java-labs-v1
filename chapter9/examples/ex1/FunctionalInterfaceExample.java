@@ -22,15 +22,12 @@ public class FunctionalInterfaceExample {
         static Calculator add() {
             return (a, b) -> a + b;
         }
-        
         static Calculator subtract() {
             return (a, b) -> a - b;
         }
-        
         static Calculator multiply() {
             return (a, b) -> a * b;
         }
-        
         static Calculator divide() {
             return (a, b) -> b != 0 ? a / b : 0;
         }

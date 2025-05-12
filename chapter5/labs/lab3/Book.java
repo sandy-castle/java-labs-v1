@@ -1,6 +1,6 @@
 package chapter5.labs.lab3;
 
-public class Book implements Buyable {
+abstract class Book implements Buyable {
     private String title;
     private String author;
     private int price;
@@ -18,6 +18,12 @@ public class Book implements Buyable {
     public void setAuthor(String author) { this.author = author; }
 
     public int getPrice() { return price; }
+
+    @Override
+    public String getName() {
+        return "";
+    }
+
     public void setPrice(int price) { this.price = price; }
 
     @Override

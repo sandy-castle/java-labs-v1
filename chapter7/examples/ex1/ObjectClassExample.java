@@ -42,7 +42,8 @@ public class ObjectClassExample {
         // clone() 메소드 사용 예
         try {
             System.out.println("\n=== clone 메소드 ===");
-            CloneableProduct cloneableProduct = new CloneableProduct("태블릿", 800000, "전자제품");
+            CloneableProduct cloneableProduct
+                    = new CloneableProduct("태블릿", 800000, "전자제품");
             CloneableProduct clonedProduct = (CloneableProduct) cloneableProduct.clone();
             
             System.out.println("원본 객체: " + cloneableProduct);
@@ -55,7 +56,7 @@ public class ObjectClassExample {
         
         // finalize() 메소드
         System.out.println("\n=== finalize 메소드 ===");
-        System.out.println("finalize 메소드는 자바 9부터 deprecated되었습니다.");
+        System.out.println("finalize 메소드는 자바 9부터 deprecatory.");
         System.out.println("자원 해제는 try-with-resources 또는 명시적인 close() 메소드 호출을 권장합니다.");
     }
 }
@@ -68,7 +69,8 @@ class Product {
     private int price;
     private String category;
     
-    public Product(String name, int price, String category) {
+    public Product(String name, int price, String category)
+    {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -105,14 +107,16 @@ class Product {
 /**
  * Cloneable 인터페이스를 구현하는 제품 클래스
  */
-class CloneableProduct extends Product implements Cloneable {
+class CloneableProduct extends Product implements Cloneable
+{
     public CloneableProduct(String name, int price, String category) {
         super(name, price, category);
     }
     
     // clone() 메소드 오버라이드
     @Override
-    public Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException
+    {
         return super.clone();
     }
 } 

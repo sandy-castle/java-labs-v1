@@ -26,16 +26,44 @@ public class Book implements Comparable<Book> {
     }
     
     // TODO: getter와 setter 메소드를 구현하세요.
-    
-    
+    public String getIsbn() {return isbn;}
+    public String getTitle() {return title;}
+    public String getAuthor() {return author;}
+    public String getCategory() {return category;}
+    public int getPublicationYear() {return publicationYear;}
+    public double getPrice() {return price;}
+
+    public void setIsbn(String isbn) {this.isbn = isbn;}
+    public void setTitle(String title) {this.title = title;}
+    public void setAuthor(String author) {this.author = author;}
+    public void setCategory(String category) {this.category = category;}
+    public void setPublicationYear(int publicationYear) {this.publicationYear = publicationYear;}
+    public void setPrice(double price) {this.price = price;}
     // TODO: toString 메소드를 오버라이드하세요.
-    
+
+    @Override
+    public String toString()
+    {
+        return "Book [isbn : " + isbn + ", title : " + title + ", author : "
+                + author + ", category : " + category + ", publicationYear : " + publicationYear + ", price : " + price + "]";
+    }
     
     // TODO: equals 메소드를 오버라이드하세요.
-    
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj) return true;                      // 자기 자신과 비교해서 타입이 다르면 false
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        Book other = (Book) obj;
+        return title.equals(other.title) && author.equals(other.author);
+    }
     
     // TODO: hashCode 메소드를 오버라이드하세요.
-    
+    @Override
+    public int hashCode()
+    {return this.isbn.hashCode();}
     
     /**
      * Comparable 인터페이스의 compareTo 메소드 구현
@@ -44,6 +72,8 @@ public class Book implements Comparable<Book> {
     @Override
     public int compareTo(Book other) {
         // TODO: ISBN 기준으로 비교하도록 구현하세요.
-        return 0;
+
+        if (this.isbn.equals(other.isbn)) {return 0;}
+        return this.isbn.compareTo(other.isbn);
     }
 } 

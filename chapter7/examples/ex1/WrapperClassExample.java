@@ -14,7 +14,7 @@ public class WrapperClassExample {
         System.out.println("박싱된 Integer: " + boxed);
 
         // 언박싱
-        int unboxed = boxed.intValue();
+        int unboxed = boxed.intValue();//객체 값을 기본타입이 받음
         System.out.println("언박싱된 int: " + unboxed);
 
         // 자동 박싱 & 언박싱

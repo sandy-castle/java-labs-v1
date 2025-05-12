@@ -85,9 +85,12 @@ public class LambdaBasicExample {
     /**
      * 이름 목록에서 특정 조건에 맞는 이름만 출력하는 메소드
      */
-    private static void filterNames(List<String> names, Predicate<String> condition) {
-        for (String name : names) {
-            if (condition.test(name)) {
+    private static void filterNames
+    (List<String> names, Predicate<String> condition) {
+        for (String name : names)
+        {
+            if (condition.test(name))
+            {
                 System.out.println(name);
             }
         }
